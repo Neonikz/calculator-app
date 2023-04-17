@@ -1,12 +1,35 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from '../theme/appTheme';
 
-const CalculatorButton = () => {
+interface CalculatorButtonProps {
+  text: string;
+  color?: string;
+  isWide?: boolean;
+}
+
+const CalculatorButton = ({
+  text,
+  color = '#2D2D2D',
+  isWide = false,
+}: CalculatorButtonProps) => {
   return (
-    <View style={styles.button}>
-      <Text style={styles.textButton}>1</Text>
-    </View>
+    <TouchableOpacity>
+      <View
+        style={{
+          ...styles.button,
+          backgroundColor: color,
+          width: isWide ? 180 : 80,
+        }}>
+        <Text
+          style={{
+            ...styles.textButton,
+            color: color === '#9B9B9B' ? '#000' : '#fff',
+          }}>
+          {text}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
