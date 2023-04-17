@@ -1,4 +1,3 @@
-import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from '../theme/appTheme';
 
@@ -6,7 +5,7 @@ interface CalculatorButtonProps {
   text: string;
   color?: string;
   isWide?: boolean;
-  action?: (textNumber: string) => void;
+  action: (textNumber: string) => void;
 }
 
 const CalculatorButton = ({
