@@ -6,15 +6,17 @@ interface CalculatorButtonProps {
   text: string;
   color?: string;
   isWide?: boolean;
+  action?: (textNumber: string) => void;
 }
 
 const CalculatorButton = ({
   text,
   color = '#2D2D2D',
   isWide = false,
+  action,
 }: CalculatorButtonProps) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => action(text)}>
       <View
         style={{
           ...styles.button,
